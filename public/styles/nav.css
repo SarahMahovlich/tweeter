@@ -3,7 +3,7 @@ nav {
   background-color: #4056A1;
     color: #FFFFFF;
     height: 120px;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,5 +18,5 @@ nav {
 
 .logo {
   font-family: 'Bungee', sans-serif;
-  position: relative;
+  position: fixed;
 }
