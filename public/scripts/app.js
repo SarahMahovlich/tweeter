@@ -1,67 +1,65 @@
 $(document).ready(function() {
   
-const renderTweets = function(tweets) {
+  const renderTweets = function(tweets) {
+    let $container = $('#tweets-container');
+    for (const item of data) {
+      $container.append(createTweetElement(item));
+    }
+  }  
 
-  for (const item of data) {
-    $('#tweets-container').append(createTweetElement(item));
+  const createTweetElement = function ({ user: { avatars, name, handle }, content, created_at }) {
+
+    let $tweet = $("<article>").addClass("tweet");
+
+    const avatar = $(`<img src=${avatars}>`);
+    const username = $(`<p>`).text(name);
+    const div = $(`<div>`).addClass("left2").append(avatar, username);
+    const userHandle = $(`<p>`).text(handle).addClass("right handle");
+    const header = $(`<header>`).addClass("grid").append(div, userHandle);
+
+    const userContent = $(`<p>`).text(content.text).addClass("tweetText");
+    const pageBreak = $(`<hr>`);
+
+    const createdAt = $(`<p>`).text(createDate(created_at)).addClass("left time");
+    const flag = $(`<i>`).addClass("fas fa-flag");
+    const arrow = $(`<i>`).addClass("fas fa-retweet");
+    const heart = $(`<i>`).addClass("fas fa-heart");
+    const div2 = $(`<div>`).addClass("right2").append(flag, arrow, heart);
+    const footer = $(`<footer>`).addClass("grid").append(createdAt, div2);
+
+    return $tweet.append(header, userContent, pageBreak, footer);
   }
-}  
 
-const createTweetElement = function (tweet) {
+  const createDate = function(time) {
+    return `${Math.round((Date.now() - new Date(time)) / (1000 * 60 * 60 * 24))} Days Ago`;
+  };
 
-  let $tweet = $("<article>").addClass("tweet");
-  
-  let tweetInfo = `
-    <header class="grid">
-      <div class="left2">
-        <img src=${tweet.user.avatars} title="granny">
-        <p>${tweet.user.name}</p>
-      </div>
-      <p class="right" class="handle">${tweet.user.handle}</p>
-    </header>
-    <p class="tweetText">${tweet.content.text}</p>
-    <hr>
-    <footer class="grid">
-      <p class="left" class="time">${tweet.created_at}</p>
-        <div class="right2">
-          <img src="https://icon-library.net/images/waving-flag-icon/waving-flag-icon-16.jpg" title="flag">
-          <img src=https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/refresh-512.png title="arrows">
-          <img src="https://cdn.imgbin.com/6/20/14/imgbin-blue-heart-color-r-vC9dTTXfp3JhuZma50LveUZyH.jpg" title="heart">
-        </div>
-    </footer>
-  `;
-
-  $tweet.append(tweetInfo);
-  return $tweet;
-}
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ];
 
-renderTweets(data);
-
+  renderTweets(data);
 });
 
 

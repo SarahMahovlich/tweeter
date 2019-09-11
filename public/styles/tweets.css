@@ -8,14 +8,15 @@ article.tweet {
 
 .handle { 
   color: lightblue;
-  display:none; }
+  display: none; 
+}
 
 article.tweet:hover {
   box-shadow: 10px 10px lightblue;
 }
 
 article.tweet:hover .handle {
-  display:block;
+  display: block;
 }
 
 .grid {
@@ -47,6 +48,12 @@ article.tweet:hover .handle {
 .tweet img {
   width: 24px;
   align-self: center;
+}
+
+.tweet i {
+  width: 24px;
+  align-self: center;
+  margin: 5px;
 }
 
 .tweet hr {
