@@ -1,4 +1,4 @@
-header {
+.header {
   background-color: #de7111;
   background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
   height: 400px;
@@ -6,19 +6,11 @@ header {
   position: relative;
   top: 120px;
   left: 0;
-  padding: 1.5em
+  padding: 1.5em;
 }
 
-img {
+.headerItems {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 25%;
-}
-
-h2 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:25%
+  margin: auto;
+  text-align: center
 }
