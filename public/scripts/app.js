@@ -35,7 +35,6 @@ $(document).ready(function() {
   };
 
 //POST REQUEST
-
 const $form = $('#tweetForm');
 
 $form.on('submit', (event) => {
@@ -46,7 +45,7 @@ $form.on('submit', (event) => {
     method: 'POST',
     data: $form.serialize()
   })
-  .then(renderTweets)
+  .then(loadTweets)
   .fail(err => {
     alert('Failed to submit tweet data');
   });
@@ -54,12 +53,13 @@ $form.on('submit', (event) => {
   
 })
 
+//GET REQUEST
 const loadTweets = function() {
-  $('.tweets-container');
+  $('#tweets-container');
   $.ajax('/tweets', { method: 'GET' })
     .then(tweets => {
       console.log("tweets");
-      $('.tweets-container').empty();
+      $('#tweets-container').empty();
       renderTweets(tweets);
     })
     .fail(err => {
