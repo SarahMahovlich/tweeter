@@ -60,6 +60,33 @@ $(document).ready(function() {
   ];
 
   renderTweets(data);
+
+//POST REQUEST
+
+const $form = $('#tweetForm');
+
+$form.on('submit', (event) => {
+  event.preventDefault();
+  
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: $form.serialize()
+  })
+  .then(console.log('succes'))
+  .fail(err => {
+    alert('Failed to submit tweet data');
+  });
+
+  
+})
+
+//refetch the data on page load
+
+
+
+
+
 });
 
 
