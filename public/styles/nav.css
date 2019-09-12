@@ -11,12 +11,43 @@ nav {
     padding: 1.5em;
 }
 
-.link {
-  position: fixed;
-  right: 1.5em
+.grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.gridLayered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.right {
+  margin-left: auto;
 }
 
 .logo {
   font-family: 'Bungee', sans-serif;
-  position: fixed;
+  align-self: flex-start;
+}
+
+@keyframes bounce {
+  from{
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(15px);
+  }
+}
+
+.fa-angle-double-down {
+  animation: bounce 0.75s infinite;
+}
+
+.fa-angle-double-down:hover {
+  animation: bounce 0.75s infinite;
+  cursor: pointer;
 }

@@ -42,7 +42,7 @@ $form.on('submit', (event) => {
 
   if ($form.serialize().length > 140) {
     alert('Your tweet is too long!');
-  } else if ($form.serialize()) {
+  } else if (!$form.serialize()) {
     alert('You have not entered a tweet!')
   } else {
     $.ajax({
@@ -55,7 +55,7 @@ $form.on('submit', (event) => {
       alert('Failed to submit tweet data');
     });
   }
-  
+  $('#target').val('');
 })
 
 //GET REQUEST
@@ -77,6 +77,10 @@ const loadTweets = function() {
 //refetch the data on page load
 loadTweets();
 
+$('.fa-angle-double-down').click(() => {
+  $('.new-tweet').slideToggle();
+  $('textarea').focus();
+});
 
 });
 
