@@ -39,17 +39,22 @@ const $form = $('#tweetForm');
 
 $form.on('submit', (event) => {
   event.preventDefault();
-  
-  $.ajax({
-    url: '/tweets',
-    method: 'POST',
-    data: $form.serialize()
-  })
-  .then(loadTweets)
-  .fail(err => {
-    alert('Failed to submit tweet data');
-  });
 
+  if ($form.serialize().length > 140) {
+    alert('Your tweet is too long!');
+  } else if ($form.serialize()) {
+    alert('You have not entered a tweet!')
+  } else {
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $form.serialize()
+    })
+    .then(loadTweets)
+    .fail(err => {
+      alert('Failed to submit tweet data');
+    });
+  }
   
 })
 
