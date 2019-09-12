@@ -29,6 +29,10 @@ input {
   font-family: 'Bungee', sans-serif
 }
 
+input:hover {
+  cursor: pointer;
+}
+
 #counter {
   font-weight: bold;
   float: right;
@@ -36,6 +40,13 @@ input {
 
 .counterRed {
   color: red;
+}
+
+#errorMessage {
+  border: 1px solid red;
+  color: red;
+  font-weight: bold; 
+  display: none;
 }
 
 

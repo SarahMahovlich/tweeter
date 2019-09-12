@@ -39,24 +39,30 @@ const $form = $('#tweetForm');
 
 $form.on('submit', (event) => {
   event.preventDefault();
+  let message = $('#target').val();
 
-  if ($form.serialize().length > 140) {
-    alert('Your tweet is too long!');
-  } else if (!$form.serialize()) {
-    alert('You have not entered a tweet!')
+  if (message.length > 140) {
+    $('.badEntry').text('Your tweet is too long!').slideDown();
+  } else if (!message) {
+    $('.badEntry').text('You have not entered a tweet!').slideDown();
   } else {
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $form.serialize()
     })
-    .then(loadTweets)
+    .then(() => {
+      loadTweets();
+      $('.badEntry').slideUp();
+      $('#target').val('');
+    })
     .fail(err => {
-      alert('Failed to submit tweet data');
+      $('.badEntry').text('Failed to submit tweet data').slideDown();
     });
   }
-  $('#target').val('');
 })
+
+
 
 //GET REQUEST
 const loadTweets = function() {
@@ -83,6 +89,7 @@ $('.fa-angle-double-down').click(() => {
 });
 
 });
+
 
 
 

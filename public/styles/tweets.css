@@ -65,3 +65,7 @@ article.tweet:hover .handle {
   flex-direction: row;
   width: 100%;
 }
+
+.tweetText {
+  overflow-wrap: break-word;
+}

@@ -65,6 +65,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
         <section class="new-tweet">
+            <p id="errorMessage" class="badEntry"></p>
             <form method="POST" action="/tweets" id="tweetForm">
               <textarea id="target" name="text" placeholder="What are you humming about?"></textarea>
               <input type="submit" id="tweet_text" value="Tweet">
