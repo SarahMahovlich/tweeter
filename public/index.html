@@ -37,6 +37,8 @@
     <!-- Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   </head>
 
   <body>
@@ -46,31 +48,27 @@
       <span class='logo'>tweeter</span>
       <div class="right">
         <div class="gridLayered">
-            <span class='link'><strong>Write</strong> a new tweet</span>
-            <i class="fas fa-angle-double-down"></i>
+          <span class='link'><strong>Write</strong> a new tweet</span>
+          <i class="fas fa-angle-double-down"></i>
         </div>
-    </div>  
+      </div>  
     </nav>
     <header class="header">
       <img class="headerPicture" src="/images/profile-hex.png"> 
       <h2>Sarah</h2>
     </header>
-    <div class="sticky">
-    </div>
-
+    <div class="sticky"></div>
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
-            <p id="errorMessage" class="badEntry"></p>
-            <form method="POST" action="/tweets" id="tweetForm">
-              <textarea id="target" name="text" placeholder="What are you humming about?"></textarea>
-              <input type="submit" id="tweet_text" value="Tweet">
-              <span id="counter" class="counter" class="counterRed">140</span>
-            </form>
-          </section>
-
-          <section id="tweets-container">
-          </section>
+      <section class="new-tweet">
+        <p id="errorMessage" class="badEntry"></p>
+        <form method="POST" action="/tweets" id="tweetForm">
+          <textarea id="target" name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" id="tweet_text" value="Tweet">
+          <span id="counter" class="counter" class="counterRed">140</span>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>

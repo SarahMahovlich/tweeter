@@ -24,7 +24,6 @@ main {
   margin-right: auto;
   width: 90%;
   position: relative;
-  /* top: 120px; */
 }
 
 /* Tablet Styles */
@@ -32,8 +31,6 @@ main {
 
   main {
     width: 55%;
-    /* float: right; */
-    /* margin: 1.5em; */
     position: absolute;
     top: 100px;
     right: 50px;
