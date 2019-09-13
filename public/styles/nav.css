@@ -1,8 +1,9 @@
 nav {
   
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
     color: #FFFFFF;
-    height: 120px;
+    /* height: 120px; */
+    height: 100px;
     position: fixed;
     top: 0;
     left: 0;
@@ -50,4 +51,13 @@ nav {
 .fa-angle-double-down:hover {
   animation: bounce 0.75s infinite;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  
+  nav {
+    background-color: #4056A1;
+    height: 120px;
+  }
+
 }

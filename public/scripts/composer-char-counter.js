@@ -3,8 +3,7 @@ $(document).ready(function() {
 
   $("#target").on('input', function() {
     let counter = 140 - this.value.length;
-    console.log(counter);
-
+  
     if (counter >= 0) {
       $('#counter').text(counter).removeClass("counterRed");
     } else if (counter <= 0) {
@@ -12,6 +11,5 @@ $(document).ready(function() {
     }
 
   });
-
+  
 });
-

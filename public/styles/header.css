@@ -1,16 +1,59 @@
-.header {
+/* .header {
   background-color: #de7111;
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-  height: 400px;
-  width: 100%;
-  position: relative;
-  top: 120px;
-  left: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png"); */
+  /* height: 400px; */
+  /* width: 100%;
+  position: relative; */
+  /* top: 120px; */
+  /* left: 0;
   padding: 1.5em;
-}
+  padding-top: calc(1.5em + 70px);
+  padding-bottom: 0em;
+} */
 
-.headerItems {
+/* .headerItems {
   display: block;
   margin: auto;
   text-align: center
+} */
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #de7111;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  width: 100%;
+}
+
+.headerPicture {
+  margin-top: 50px;
+}
+
+.sticky {
+  height: 110px;
+  position: sticky;
+  top: 0px;
+  background-color: #de7111;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  z-index: 3;
+}
+
+ /* Tablet Styles */
+ @media only screen and (min-width: 768px) {
+  
+  .header {
+    width: 30%;
+    position: fixed;
+    /* height: 100px; */
+    left: 50px;
+    top: 150px;
+  }
+
+  .sticky {
+    display: none;
+  }
+
 }

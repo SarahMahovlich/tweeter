@@ -9,12 +9,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
-
-
  
 body {
   color: #545149;
@@ -22,7 +16,6 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   position: static
-
 }
 
 main {
@@ -31,11 +24,19 @@ main {
   margin-right: auto;
   width: 90%;
   position: relative;
-  top: 120px;
+  /* top: 120px; */
 }
 
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
 
+  main {
+    width: 55%;
+    /* float: right; */
+    /* margin: 1.5em; */
+    position: absolute;
+    top: 100px;
+    right: 50px;
+  }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+}

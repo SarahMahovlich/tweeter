@@ -50,10 +50,15 @@ article.tweet:hover .handle {
   align-self: center;
 }
 
-.tweet i {
+.fas {
   width: 24px;
   align-self: center;
   margin: 5px;
+  display: none;
+}
+
+.fas:hover {
+  color: lightblue;
 }
 
 .tweet hr {

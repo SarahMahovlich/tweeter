@@ -2,9 +2,12 @@ $(document).ready(function() {
   
   const renderTweets = function(tweets) {
     let $container = $('#tweets-container');
+    let tweetArray = [];
     for (const item of tweets) {
-      $container.append(createTweetElement(item));
+      tweetArray.push(createTweetElement(item));
     }
+    tweetArray.reverse();
+    $container.append(tweetArray);
   }  
 
   const createTweetElement = function ({ user: { avatars, name, handle }, content, created_at }) {
@@ -54,15 +57,13 @@ $form.on('submit', (event) => {
     .then(() => {
       loadTweets();
       $('.badEntry').slideUp();
-      $('#target').val('');
+      $('#target').val('').trigger('input');
     })
     .fail(err => {
       $('.badEntry').text('Failed to submit tweet data').slideDown();
     });
   }
 })
-
-
 
 //GET REQUEST
 const loadTweets = function() {
